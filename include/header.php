@@ -22,10 +22,28 @@ if (!isset($_SESSION)) {
           /* Show Home link only when user is NOT logged in */
           if (!isset($_SESSION['user_name'])) {
             echo '<li class="nav-item">';
-            echo '<a class="nav-link active" aria-current="page" href="../">Home</a>';
+            echo '<a class="nav-link active" aria-current="page" href="index.php">Home</a>';
             echo '</li>';
           }
         ?>
+        <?php
+/* Show Sign Up link only when user is NOT logged in */
+if (!isset($_SESSION['user_name'])) {
+  echo '<li class="nav-item">';
+  echo '<a class="nav-link" href="signup.php">Sign Up</a>';
+  echo '</li>';
+}
+?>
+   <?php
+/* Show Sign Up link only when user is NOT logged in */
+if (!isset($_SESSION['user_name'])) {
+  echo '<li class="nav-item">';
+  echo '<a class="nav-link" href="login.php">Log In</a>';
+  echo '</li>';
+}
+?>
+
+
         <?php
           /* User Information */
           if (isset($_SESSION['user_name']) && $_SESSION['user_role'] == 1) { // Only display when user is logged in
